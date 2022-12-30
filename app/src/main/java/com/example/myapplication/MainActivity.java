@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Button b33;
     Button again_button;
 
+    ZerosCrosses game = new ZerosCrosses();
+
     int moveNumber = 1;
 
     @SuppressLint("MissingInflatedId")
