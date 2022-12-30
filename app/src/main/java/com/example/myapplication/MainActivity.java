@@ -55,6 +55,30 @@ public class MainActivity extends AppCompatActivity {
         startAgain();
     }
 
+    void enableGameButtons(){
+        b11.setOnClickListener(btnPressed);
+        b12.setOnClickListener(btnPressed);
+        b13.setOnClickListener(btnPressed);
+        b21.setOnClickListener(btnPressed);
+        b22.setOnClickListener(btnPressed);
+        b23.setOnClickListener(btnPressed);
+        b31.setOnClickListener(btnPressed);
+        b32.setOnClickListener(btnPressed);
+        b33.setOnClickListener(btnPressed);
+    }
+
+    void disableGameButtons(){
+        b11.setOnClickListener(null);
+        b12.setOnClickListener(null);
+        b13.setOnClickListener(null);
+        b21.setOnClickListener(null);
+        b22.setOnClickListener(null);
+        b23.setOnClickListener(null);
+        b31.setOnClickListener(null);
+        b32.setOnClickListener(null);
+        b33.setOnClickListener(null);
+    }
+
     void startAgain() {
         title.setText(R.string.x_string);
 
@@ -68,15 +92,7 @@ public class MainActivity extends AppCompatActivity {
         b32.setText("");
         b33.setText("");
 
-        b11.setOnClickListener(btnPressed);
-        b12.setOnClickListener(btnPressed);
-        b13.setOnClickListener(btnPressed);
-        b21.setOnClickListener(btnPressed);
-        b22.setOnClickListener(btnPressed);
-        b23.setOnClickListener(btnPressed);
-        b31.setOnClickListener(btnPressed);
-        b32.setOnClickListener(btnPressed);
-        b33.setOnClickListener(btnPressed);
+        enableGameButtons();
 
         again_button.setOnClickListener(againPressed);
         again_button.setVisibility(View.INVISIBLE);
@@ -181,10 +197,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (v instanceof Button) {
+
                 Button btn = (Button) v;
+
                 if (!(btn.getText().toString().equals(""))) {
                     return;
                 }
+
                 if (title.getText().equals("Turn of X")) {
                     btn.setText("X");
                     title.setText(R.string.o_string);
@@ -192,19 +211,12 @@ public class MainActivity extends AppCompatActivity {
                     btn.setText("O");
                     title.setText(R.string.x_string);
                 }
+
                 int result = checkEndGame(++moveNumber);
+
                 if ((result == 1) | (result == 2)) {
                     again_button.setVisibility(View.VISIBLE);
-                    title.setOnClickListener(null);
-                    b11.setOnClickListener(null);
-                    b12.setOnClickListener(null);
-                    b13.setOnClickListener(null);
-                    b21.setOnClickListener(null);
-                    b22.setOnClickListener(null);
-                    b23.setOnClickListener(null);
-                    b31.setOnClickListener(null);
-                    b32.setOnClickListener(null);
-                    b33.setOnClickListener(null);
+                    disableGameButtons();
 
                     if (title.getText().equals("X is the winner!"))
                         x_no_of_wins.setText("" + 1);
