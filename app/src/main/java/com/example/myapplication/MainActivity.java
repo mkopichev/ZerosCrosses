@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Button b32;
     Button b33;
     Button again_button;
+    TextView x_no_of_wins;
+    TextView o_no_of_wins;
 
     ZerosCrosses game = new ZerosCrosses();
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_layout);
 
@@ -43,12 +46,18 @@ public class MainActivity extends AppCompatActivity {
         b32 = findViewById(R.id.button8);
         b33 = findViewById(R.id.button9);
         again_button = findViewById(R.id.try_again_button);
+        x_no_of_wins = findViewById(R.id.x_win_counter);
+        o_no_of_wins = findViewById(R.id.o_win_counter);
+
+        x_no_of_wins.setText("0");
+        o_no_of_wins.setText("0");
 
         startAgain();
     }
 
     void startAgain() {
         title.setText(R.string.x_string);
+
         b11.setText("");
         b12.setText("");
         b13.setText("");
@@ -68,15 +77,15 @@ public class MainActivity extends AppCompatActivity {
         b31.setOnClickListener(btnPressed);
         b32.setOnClickListener(btnPressed);
         b33.setOnClickListener(btnPressed);
-        again_button.setOnClickListener(againPressed);
 
+        again_button.setOnClickListener(againPressed);
         again_button.setVisibility(View.INVISIBLE);
 
-        moveNumber = 1;
+        moveNumber = 0;
     }
 
     int checkEndGame(int moveNumber) {
-        if ((moveNumber > 3) & (moveNumber < 9)) {
+        if ((moveNumber > 3) & (moveNumber < 10)) {
             //strings check
             if ((b11.getText().toString().equals(b12.getText().toString())) & (b11.getText().toString().equals(b13.getText().toString()))) {
                 if (b11.getText().equals("X")) {
@@ -168,18 +177,14 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private final View.OnClickListener btnPressed = new View.OnClickListener() {
-
+        @SuppressLint("SetTextI18n")
         @Override
         public void onClick(View v) {
-
             if (v instanceof Button) {
-
                 Button btn = (Button) v;
-
                 if (!(btn.getText().toString().equals(""))) {
                     return;
                 }
-
                 if (title.getText().equals("Turn of X")) {
                     btn.setText("X");
                     title.setText(R.string.o_string);
@@ -187,9 +192,7 @@ public class MainActivity extends AppCompatActivity {
                     btn.setText("O");
                     title.setText(R.string.x_string);
                 }
-
-                int result = checkEndGame(moveNumber++);
-
+                int result = checkEndGame(++moveNumber);
                 if ((result == 1) | (result == 2)) {
                     again_button.setVisibility(View.VISIBLE);
                     title.setOnClickListener(null);
@@ -202,9 +205,13 @@ public class MainActivity extends AppCompatActivity {
                     b31.setOnClickListener(null);
                     b32.setOnClickListener(null);
                     b33.setOnClickListener(null);
+
+                    if (title.getText().equals("X is the winner!"))
+                        x_no_of_wins.setText("" + 1);
+                    else if (title.getText().equals("O is the winner!"))
+                        o_no_of_wins.setText("" + 1);
                 }
             }
         }
     };
-
 }
