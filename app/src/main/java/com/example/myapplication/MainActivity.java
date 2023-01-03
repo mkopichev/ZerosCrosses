@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         startAgain();
     }
 
-    void enableGameButtons(){
+    void enableGameButtons() {
         b11.setOnClickListener(btnPressed);
         b12.setOnClickListener(btnPressed);
         b13.setOnClickListener(btnPressed);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         b33.setOnClickListener(btnPressed);
     }
 
-    void disableGameButtons(){
+    void disableGameButtons() {
         b11.setOnClickListener(null);
         b12.setOnClickListener(null);
         b13.setOnClickListener(null);
