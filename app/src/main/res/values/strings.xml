@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zeros and crosses</string>
+    <string name="app_name">Tic-tac-toe</string>
     <string name="x_string">Turn of X</string>
     <string name="o_string">Turn of O</string>
     <string name="false_tap">Not here, pal</string>
