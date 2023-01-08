@@ -9,4 +9,5 @@
     <string name="try_again_button">Try again</string>
     <string name="O_sign">0</string>
     <string name="X_sign">X</string>
+    <string name="zero">0</string>
 </resources>

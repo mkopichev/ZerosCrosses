@@ -1,11 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_shape"
+        android:text="@string/x_string"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/game_buttons" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/game_buttons" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/game_buttons" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/game_buttons" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/game_buttons" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/game_buttons" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/game_buttons" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/game_buttons" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/game_buttons" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:text="@string/X_sign"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="100sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:id="@+id/x_win_counter"
+                    android:textAlignment="center"
+                    android:textSize="80sp"
+                    android:textStyle="italic"
+                    android:text="@string/zero" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/try_again_button"
+                style="@style/game_buttons"
+                android:text="@string/try_again_button"
+                android:textAlignment="center"
+                android:textSize="70sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:text="@string/O_sign"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="100sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:id="@+id/o_win_counter"
+                    android:textAlignment="center"
+                    android:textSize="80sp"
+                    android:textStyle="italic"
+                    android:text="@string/zero" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+<!--
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/teal_200"
@@ -191,3 +347,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+-->
