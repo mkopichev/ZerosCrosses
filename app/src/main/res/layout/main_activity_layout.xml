@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/header"
@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/text_shape"
         android:text="@string/x_string"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="80sp"
@@ -109,6 +109,7 @@
                     android:layout_width="150dp"
                     android:id="@+id/x_win_counter"
                     android:textAlignment="center"
+                    android:gravity="center"
                     android:textSize="90dp"
                     android:textStyle="italic"
                     android:text="@string/zero" />
@@ -141,6 +142,7 @@
                     android:layout_width="150dp"
                     android:id="@+id/o_win_counter"
                     android:textAlignment="center"
+                    android:gravity="center"
                     android:textSize="90dp"
                     android:textStyle="italic"
                     android:text="@string/zero" />
